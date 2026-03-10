@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "DEVECO UTM Link Copier",
+  "version": "1.0.0",
+  "author": "Guokai Han",
+  "description": "Copy the current page URL with DEVECO UTM parameters appended, via context menu or popup.",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "notifications",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEVECO UTM Link Copier</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2a2d3a;
+      --accent: #4f8ef7;
+      --accent-glow: rgba(79, 142, 247, 0.25);
+      --text: #e8eaf0;
+      --muted: #8890a8;
+      --success: #34d399;
+      --success-glow: rgba(52, 211, 153, 0.2);
+      --error: #f87171;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      width: 340px;
+      min-height: 200px;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #1a1d27 0%, #141720 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--accent), #7b68ee);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      box-shadow: 0 0 12px var(--accent-glow);
+      flex-shrink: 0;
+    }
+
+    .header-text h1 {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--text);
+    }
+
+    .header-text p {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 1px;
+    }
+
+    .body {
+      padding: 18px 20px 20px;
+    }
+
+    .url-preview {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 14px;
+    }
+
+    .url-label {
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 5px;
+    }
+
+    .url-text {
+      font-size: 11px;
+      color: var(--text);
+      word-break: break-all;
+      line-height: 1.5;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    .url-text .utm-part {
+      color: var(--accent);
+      opacity: 0.85;
+    }
+
+    #copyBtn {
+      width: 100%;
+      padding: 11px 16px;
+      background: linear-gradient(135deg, var(--accent), #6c5ce7);
+      color: #fff;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: opacity 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 4px 14px var(--accent-glow);
+      letter-spacing: 0.01em;
+    }
+
+    #copyBtn:hover {
+      opacity: 0.92;
+      box-shadow: 0 6px 20px var(--accent-glow);
+      transform: translateY(-1px);
+    }
+
+    #copyBtn:active {
+      transform: translateY(0);
+    }
+
+    #copyBtn.success {
+      background: linear-gradient(135deg, var(--success), #0ea5e9);
+      box-shadow: 0 4px 14px var(--success-glow);
+    }
+
+    #status {
+      font-size: 11px;
+      text-align: center;
+      margin-top: 10px;
+      min-height: 16px;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    #status.success {
+      color: var(--success);
+    }
+
+    #status.error {
+      color: var(--error);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="logo">🔗</div>
+    <div class="header-text">
+      <h1>DEVECO UTM Copier</h1>
+      <p>Append UTM parameters &amp; copy link</p>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="url-preview">
+      <div class="url-label">UTM Link Preview</div>
+      <div class="url-text" id="urlPreview">Loading…</div>
+    </div>
+
+    <button id="copyBtn">
+      <span id="btnIcon">📋</span>
+      <span id="btnLabel">Copy UTM Link</span>
+    </button>
+
+    <div id="status"></div>
+  </div>
+
+
+  <script src="popup.js"></script>
+</body>
+
+</html>
