@@ -1,6 +1,6 @@
 // popup.js – Logic for the DEVECO UTM Link Copier popup
 
-const UTM_PARAMS = 'utm_campaign=DEVECO_GDEMembers&utm_source=deveco';
+const UTM_PARAMS = 'utm_campaign=deveco_gdemembers&utm_source=deveco';
 
 /**
  * Append UTM parameters to a URL string.

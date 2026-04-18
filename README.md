@@ -10,17 +10,15 @@ A lightweight Chrome extension that helps DEVECO / GDE community members quickly
 ### Appended UTM Parameters
 
 ```
-utm_campaign=DEVECO_GDEMembers
+utm_campaign=deveco_gdemembers
 utm_source=deveco
 ```
 
 Example output URL:
 
 ```
-https://example.com/page?utm_campaign=DEVECO_GDEMembers&utm_source=deveco
+https://example.com/page?utm_campaign=deveco_gdemembers&utm_source=deveco
 ```
-
-> If the original URL already contains a parameter with the same name, the extension will not add it again.
 
 ---
 

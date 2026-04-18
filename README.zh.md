@@ -10,17 +10,15 @@
 ### 追加的 UTM 参数
 
 ```
-utm_campaign=DEVECO_GDEMembers
+utm_campaign=deveco_gdemembers
 utm_source=deveco
 ```
 
 最终链接示例：
 
 ```
-https://example.com/page?utm_campaign=DEVECO_GDEMembers&utm_source=deveco
+https://example.com/page?utm_campaign=deveco_gdemembers&utm_source=deveco
 ```
-
-> 若原始 URL 已包含同名参数，扩展不会重复添加。
 
 ---
 
